@@ -1,0 +1,124 @@
+<html>
+
+<head>
+    <title>index.html</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <secion id="appUI">
+
+    </secion>
+
+    <!-- MODALS DO NOT REMOVE Section -->
+    <section id="loginAuthModals">
+        <!--Modal to show loading-->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="loader" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <img src="img/ajax-loader.gif" />
+                        <p id="loadertext">
+                            Loading...
+                        </p>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <!--Modal to show Authorize APIs-->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="generic" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p id="authtext">
+                            <a id="authlink" href="#" class="btn btn-default">Authorize Here</a>
+                            <a id="authclose" href="#" class="btn btn-default">Close</a>
+                            <!--Progress/Loading... Indicator-->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal -->
+        <!--   User based Login -->
+        <!--Modal to show Login/Register-->
+        <div class="modal fade" data-backdrop="static" data-keyboard="false" id="loginRegister" tabindex="-2" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                        <p id="failedLogin" class="text-danger"></p>
+                        <div class="tab-content">
+                            <div id="lr_load">
+                                <img src="img/ajax-loader.gif" />
+                                <span>
+                                    Connecting...
+                                    </span>
+                            </div>
+                            <div class="tab-pane active" id="loginFormTab">
+                                <h2>Login</h2>
+                                <form id="loginForm" role="form">
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input id="loginEmail" type="email" class="form-control" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input id="loginPassword" type="password" class="form-control" placeholder="Password">
+                                    </div>
+
+                                    <button type="submit" class="btn btn-raised btn-info">Submit</button>
+                                    <a id="registerToggle" href="#registerFormTab" data-toggle="tab" class="btn btn-raised btn-default">Register</a>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="registerFormTab">
+                                <h2>Register</h2>
+                                <form id="registerForm" role="form">
+                                    <div class="form-group">
+                                        <label for="exampleInputName">Name</label>
+                                        <input id="registerName" type="text" class="form-control" placeholder="Enter name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input id="registerEmail" type="email" class="form-control" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input id="registerPassword" type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password Again</label>
+                                        <input id="registerPassword2" type="password" class="form-control" placeholder="Password">
+                                    </div>
+                                    <button type="submit" class="btn btn-info">Submit</button>
+                                    <a href="#loginFormTab" data-toggle="tab" class="btn btn-default">Login</a>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </section>
+
+    <script src="js/app-config.js"></script>
+    <!--
+    <script src="js/jquery2.min.js"></script>
+    <script src="js/nimble-raw.js"></script>
+-->
+    <script src="js/nimble.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom-app.js"></script>
+</body>
+
+</html>

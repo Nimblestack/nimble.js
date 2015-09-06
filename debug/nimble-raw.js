@@ -198,8 +198,13 @@ var Nimble = Nimble || {};
          * @return null
          * @inner
          */
+<<<<<<< HEAD
         setBaseUrl: function (dev, url, protocol, host) {
             _self.BaseUrl = protocol + "://" + host + "/"+dev+"/" + url;
+=======
+        setBaseUrl: function (url, protocol, host) {
+            _self.BaseUrl = protocol + "://" + host + "/" + url;
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
         },
         /**
          * @description Get the BaseUrl.
@@ -266,7 +271,10 @@ var Nimble = Nimble || {};
             //console.log(next);
             // post request to Datadipity.com
             _self.setBaseUrl(
+<<<<<<< HEAD
                 config.developer,
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.appconfig[index].url,
                 config.protocol,
                 config.host
@@ -274,7 +282,11 @@ var Nimble = Nimble || {};
 
             $.ajax({
                 type: "GET",
+<<<<<<< HEAD
                 url: _self.BaseUrl + "/" + pagesType + ".json?_method=post&_action=" + action + "&PHPSESSID=" + _self.getSession(index),
+=======
+                url:  _self.BaseUrl + "/" + pagesType + ".json?_method=post&_action=" + action + "&PHPSESSID=" + _self.getSession(index),
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 crossDomain: true,
                 dataType: 'text',
                 success: function (data) {
@@ -305,7 +317,10 @@ var Nimble = Nimble || {};
             }
 
             _self.setBaseUrl(
+<<<<<<< HEAD
                 config.developer,
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.appconfig[index].url,
                 config.protocol,
                 config.host
@@ -313,7 +328,11 @@ var Nimble = Nimble || {};
 
             $.ajax({
                 type: "GET",
+<<<<<<< HEAD
                 url: _self.BaseUrl + "/" + pageType + "/" + pageId + ".json?_method=put&_action=" + action + "&PHPSESSID=" + _self.getSession(index),
+=======
+                url:  _self.BaseUrl + "/" + pageType +"/"+pageId+ ".json?_method=put&_action=" + action + "&PHPSESSID=" + _self.getSession(index),
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 crossDomain: true,
                 dataType: 'text',
                 success: function (data) {
@@ -346,7 +365,10 @@ var Nimble = Nimble || {};
 
             // GET delete request to Datadipity.com using XML
             _self.setBaseUrl(
+<<<<<<< HEAD
                 config.developer,
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.appconfig[index].url,
                 config.protocol,
                 config.host
@@ -354,7 +376,11 @@ var Nimble = Nimble || {};
 
             $.ajax({
                 type: "GET",
+<<<<<<< HEAD
                 url: _self.BaseUrl + "/" + pageType + "/" + pageId + ".json?_method=delete&PHPSESSID=" + _self.getSession(index),
+=======
+                url:  _self.BaseUrl + "/" + pageType + "/" + pageId + ".json?_method=delete&PHPSESSID=" + _self.getSession(index),
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 crossDomain: true,
                 dataType: 'text',
                 success: function (data) {
@@ -389,7 +415,10 @@ var Nimble = Nimble || {};
             }
 
             _self.setBaseUrl(
+<<<<<<< HEAD
                 config.developer,
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.appconfig[index].url,
                 config.protocol,
                 config.host
@@ -413,7 +442,11 @@ var Nimble = Nimble || {};
                     reqUrl = _self.BaseUrl + "/" + pageType.toLowerCase() + "/" + pageId.toLowerCase();
                 }
             } catch (err) {
+<<<<<<< HEAD
                 throw (err);
+=======
+                throw(err);
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             }
 
             if (pageUrl !== null && pageUrl !== undefined) {
@@ -423,10 +456,17 @@ var Nimble = Nimble || {};
             var sessid = _self.getSession(index);
             var withSession = false;
             if (sessid != "null" && sessid != "undefined" && sessid !== null && sessid !== undefined) {
+<<<<<<< HEAD
                 withSession = true;
             }
 
             if (withSession) {
+=======
+                   withSession = true;
+            }
+
+            if(withSession) {
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 if (withUpdate === true) {
                     reqUrl += ".json?update&PHPSESSID=" + sessid;
                 } else {
@@ -444,9 +484,15 @@ var Nimble = Nimble || {};
             if ((postparams !== undefined && postparams !== null) && postparams.length > 0) {
                 var c = postparams.length;
                 for (var i = 0; i < c; i++) {
+<<<<<<< HEAD
                     if (i === 0 && !withUpdate && !withSession) {
                         reqUrl += "?postparam[" + postparams[i].name + "]=" + postparams[i].value;
                     } else {
+=======
+                    if(i === 0 && !withUpdate && !withSession){
+                        reqUrl += "?postparam[" + postparams[i].name + "]=" + postparams[i].value;
+                    }else{
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                         reqUrl += "&postparam[" + postparams[i].name + "]=" + postparams[i].value;
                     }
                 }
@@ -458,8 +504,12 @@ var Nimble = Nimble || {};
                 crossDomain: true,
                 dataType: 'text',
                 success: function (data) {
+<<<<<<< HEAD
                     //console.log(data);
 //                    console.log(next);
+=======
+                    console.log(data);
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                     next(data);
                 },
                 error: _self.failedRequest
@@ -472,11 +522,19 @@ var Nimble = Nimble || {};
          * @memberOf Nimble
          * @public
          * @param {FormData} Filedata - This is the object from the File Input tag in HTML
+<<<<<<< HEAD
          * @param {asyncCallback} callback - A custom callback function to override the default. This takes an Nimble object as an argumentf.
          * @return null
          * @inner
          */
         getWithFile: function (Filedata, callback, index, postparams, native) {
+=======
+         * @param {asyncCallback} callback - A custom callback function to override the default. This takes an Nimble object as an argument.
+         * @return null
+         * @inner
+         */
+        getWithFile: function (Filedata, callback, index) {
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             var next = null;
             if (callback !== null) {
                 next = callback;
@@ -485,13 +543,17 @@ var Nimble = Nimble || {};
             }
 
             _self.setBaseUrl(
+<<<<<<< HEAD
                 config.developer,
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.appconfig[index].url,
                 config.protocol,
                 config.host
             );
             // TODO: Create action templates in Nimble based on available data models
             var postUrl = _self.BaseUrl + ".json?update&PHPSESSID=" + this.getSession(index);
+<<<<<<< HEAD
             // include postparams
             if ((postparams !== undefined && postparams !== null) && postparams.length > 0) {
                 var c = postparams.length;
@@ -533,6 +595,22 @@ var Nimble = Nimble || {};
                     true
                 );
             }
+=======
+            //console.log(postUrl);
+            $.ajax({
+                type: "POST",
+                url: postUrl,
+                crossDomain: true,
+                processData: false,
+                contentType: false,
+                data: Filedata,
+                dataType: 'text',
+                success: function (data) {
+                    next(data);
+                },
+                error: _self.failedRequest
+            });
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
         },
         /**
          * @description Logs any Ajax failures to the console
@@ -612,17 +690,27 @@ var Nimble = Nimble || {};
                 return false;
             }
 
+<<<<<<< HEAD
             //            var nml = this;
             _self.setBaseUrl(
                 config.developer,
                 _self.appconfig[_self.loginIndex].url,
+=======
+//            var nml = this;
+            _self.setBaseUrl(
+                 _self.appconfig[_self.loginIndex].url,
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 config.protocol,
                 config.host
             );
 
             $.ajax({
                 type: "POST",
+<<<<<<< HEAD
                 url: _self.BaseUrl + "/register/doRegister.json",
+=======
+                url:  _self.BaseUrl + "/register/doRegister.json",
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 crossDomain: true,
                 data: {
                     name: userName,
@@ -654,7 +742,11 @@ var Nimble = Nimble || {};
                 _self.setSession(data.session.id, _self.loginIndex);
 
                 if (data.registerApis === true || data.registerApis == "true") {
+<<<<<<< HEAD
                     window.open(_self.BaseUrl + "/register/apis?PHPSESSID=" + _self.getSession(_self.loginIndex), "App Authorization", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350");
+=======
+                    window.open(_self.BaseUrl + "/register/apis?PHPSESSID=" + _self.getSession(_self.loginIndex ), "App Authorization", "directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=400,height=350");
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 }
             }
         },
@@ -675,12 +767,15 @@ var Nimble = Nimble || {};
             } else {
                 next = _self.onLogin;
             }
+<<<<<<< HEAD
              _self.setBaseUrl(
                 config.developer,
                 _self.appconfig[_self.loginIndex].url,
                 config.protocol,
                 config.host
             );
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             $.ajax({
                 type: "GET",
                 url: _self.BaseUrl + "/login/logout.json?PHPSESSID=" + sessid,
@@ -714,15 +809,22 @@ var Nimble = Nimble || {};
                 next = _self.onLogin;
             }
 
+<<<<<<< HEAD
              _self.setBaseUrl(
                 config.developer,
+=======
+            _self.setBaseUrl(
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.appconfig[_self.loginIndex].url,
                 config.protocol,
                 config.host
             );
 
 
+<<<<<<< HEAD
             console.log(_self.BaseUrl + "/login/doLogin.json");
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             $.ajax({
                 type: "GET",
                 url: _self.BaseUrl + "/login/doLogin.json",
@@ -772,7 +874,10 @@ var Nimble = Nimble || {};
             $("#loader").modal("hide");
             $("#generic").modal("show");
             $("#authlink").attr("href", _self.BaseUrl + "/register/apis?PHPSESSID=" + _self.getSession(_self.loginIndex));
+<<<<<<< HEAD
             console.log(_self.BaseUrl + "/register/apis?PHPSESSID=" + _self.getSession(_self.loginIndex));
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             $("#authlink").bind('click', function (evt) {
                 $("#authlink").unbind('click');
                 evt.preventDefault();
@@ -796,8 +901,12 @@ var Nimble = Nimble || {};
                     });
                 }
             });
+<<<<<<< HEAD
         },
 
+=======
+        }
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
     };
 })();
 /**
@@ -878,8 +987,11 @@ var app = app || {};
          * @inner
          */
         nimble: null,
+<<<<<<< HEAD
         // firebase reference
         fb: null,
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
         /**
          * @description A place holder for a WebSocket connection used by the App
          * @protected
@@ -905,6 +1017,7 @@ var app = app || {};
          */
         started: false,
         /**
+<<<<<<< HEAD
          * @description Store password in localStorage
          * @protected
          * @memberOf app
@@ -913,6 +1026,8 @@ var app = app || {};
          */
         savePassword: false,
         /**
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
          * @description App constructor
          * @function initialize
          * @memberOf app
@@ -934,7 +1049,11 @@ var app = app || {};
          * @inner
          */
         bindEvents: function () {
+<<<<<<< HEAD
             // console.log("App Bind Events");
+=======
+           // console.log("App Bind Events");
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             if (document.location.protocol === "file:") {
                 //console.log("Phonegap App");
                 _self.isGap = true;
@@ -965,6 +1084,7 @@ var app = app || {};
             _self.nimble.initWithData = config.initWithData;
             _self.nimble.isGap = _self.isGap;
             _self.nimble.onGetData = _self.onGetData;
+<<<<<<< HEAD
             _self.fb = new Firebase(config.fbUrl);
             $("#registerToggle").bind("click", function (evt) {
                 console.log("Register Toggle Clicked");
@@ -976,13 +1096,37 @@ var app = app || {};
                     window.open(config.protocol + "://" + config.host + "/" + config.developer + "/group/" + config.group + "/show", "_blank");
                 }
             });
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             // set host name using local var
             _self.nimble.setBaseUrl(
                 config.appconfig[0].url,
                 config.protocol, config.host
             );
             _self.nimble.loginHandler = app.onLoginOrRegister;
+<<<<<<< HEAD
             if (!config.autoLogin) {
+=======
+            var sessionReady = false;
+            var sessData = null;
+            if (window.localStorage.appconfig !== undefined && window.localStorage.appconfig !== null) {
+                sessData = JSON.parse(window.localStorage.appconfig);
+                if (sessData[0].url === config.appconfig[0].url) {
+                    if (sessData[0].sessid !== null && sessData[0].sessid !== undefined && sessData[0].sessid !== "") {
+                        // got session already
+                        sessionReady = true;
+                    }
+                }
+            }
+            if (sessionReady) {
+                _self.nimble.setAppConfig(sessData);
+                if (_self.nimble.initWithData) {
+                    _self.nimble.get(0, _self.onGetData, true);
+                } else {
+                    _self.initGui();
+                }
+            } else {
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                 _self.nimble.setAppConfig(config.appconfig);
                 _self.runLogin();
             }
@@ -1028,6 +1172,7 @@ var app = app || {};
                     $('#loginRegister').modal('show');
                     $("#modalTitle").text("Login");
                     $("#loginForm").on("submit", _self.handleLogin);
+<<<<<<< HEAD
                     //$("#registerForm").on("submit", _self.handleRegister);
 
                 } else {
@@ -1037,6 +1182,10 @@ var app = app || {};
                     if (window.localStorage._savePassword) {
                         $('#loader').modal('show');
                     }
+=======
+                    $("#registerForm").on("submit", _self.handleRegister);
+                } else {
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                     _self.nimble.Login(
                         window.localStorage._tmp_email,
                         window.localStorage._tmp_password,
@@ -1059,8 +1208,11 @@ var app = app || {};
             $("#lr_load").show();
             var email = $("#loginEmail").val();
             var password = $("#loginPassword").val();
+<<<<<<< HEAD
             _self.savePassword = $('#savePassword').is(':checked');
             window.localStorage._savePassword = _self.savePassword;
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             if (_self.nimble.loginIndex === 0) {
                 window.localStorage._tmp_email = email;
                 window.localStorage._tmp_password = password;
@@ -1102,8 +1254,13 @@ var app = app || {};
          * @return null
          * @inner
          */
+<<<<<<< HEAD
         initGui: function () {
             // console.log("initGui called");
+=======
+        initGui: function(){
+           // console.log("initGui called");
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
         },
         /**
          * @description Override function. To be overriden in custom javascript. Handle response from server.
@@ -1114,7 +1271,11 @@ var app = app || {};
          * @return null
          * @inner
          */
+<<<<<<< HEAD
         onGetData: function (data) {
+=======
+        onGetData: function(data) {
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
             //console.log("Got data from server.");
         },
         /**
@@ -1126,6 +1287,7 @@ var app = app || {};
          * @return null
          * @inner
          */
+<<<<<<< HEAD
         registerFirebaseUser: function () {
             console.log("creating fb user");
             _self.fb.createUser({
@@ -1172,12 +1334,44 @@ var app = app || {};
                         $("#failedLogin").html("You must authorize all services. Please click login via the website to continue. <a href='" + config.protocol + "://" + config.host + "/" + config.developer + "/group/" + config.group + "/show' target='_blank'>Login Here</a>");
                     } else {
                         _self.nimble.onLogin(data);
+=======
+        onLoginOrRegister: function (data) {
+           // console.log(data);
+            if (data instanceof Object) {
+                if (data.session !== null && data.session !== undefined) {
+                    _self.nimble.onLogin(data);
+                    if (data.registerApis === true || data.registerApis === "true") {
+                       // console.log("open auth dialogs");
+                        if (!config.autoLogin) {
+                            $("#lr_load").hide();
+                            $('#loader').modal('show');
+                            $('#loginRegister').modal('hide');
+                        }
+                        _self.nimble.manageAuthRedirect(function () {
+                            // auth redirect should have been successful for current _self.loginIndex
+                            //console.log("Managed auth redirect");
+                            if (_self.nimble.loginIndex < (_self.nimble.appconfig.length - 1)) {
+                                // increment loginIndex
+                                _self.nimble.loginIndex++;
+                                _self.runLogin();
+                            } else {
+                                // start GUI
+                                if (_self.nimble.initWithData === true) {
+                                    _self.nimble.get(config.startIndex, _self.nimble.onGetData, true);
+                                } else {
+                                    _self.initGui();
+                                }
+                            }
+                        });
+                    } else {
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                         if (_self.nimble.loginIndex < (_self.nimble.appconfig.length - 1)) {
                             // increment loginIndex
                             _self.nimble.loginIndex++;
                             // run login sequence again
                             _self.runLogin();
                         } else {
+<<<<<<< HEAD
                             // login to Firebase
                             if (_self.fb) {
                                 _self.fb.authWithPassword({
@@ -1193,26 +1387,36 @@ var app = app || {};
                                     }
                                 });
                             }
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                             if (!config.autoLogin) {
                                 $("#lr_load").hide();
                                 $('#loginRegister').modal('hide');
                             }
                             // start GUI
+<<<<<<< HEAD
                             if (!window.localStorage._savePassword) {
                                 delete window.localStorage._savePassword;
                                 delete window.localStorage._tmp_email;
                                 delete window.localStorage._tmp_password;
                                 delete window.localStorage._tmp_password2;
                             }
+=======
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                             if (_self.nimble.initWithData) {
                                 $('#loader').modal('show');
                                 _self.nimble.get(config.startIndex, _self.nimble.onGetData, true);
                             } else {
+<<<<<<< HEAD
 
                                 if (!_self.started) {
                                     _self.initGui();
                                 } else {
                                     $('#loader').modal('hide');
+=======
+                                if(!_self.started){
+                                    _self.initGui();
+>>>>>>> 0f1ab868ea9213153d9d1f8e0a239535da6749b8
                                 }
                             }
                         }

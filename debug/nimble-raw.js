@@ -984,10 +984,8 @@ var app = app || {};
                 config.protocol, config.host
             );
             _self.nimble.loginHandler = app.onLoginOrRegister;
-            if (!config.autoLogin) {
-                _self.nimble.setAppConfig(config.appconfig);
-                _self.runLogin();
-            }
+            _self.nimble.setAppConfig(config.appconfig);
+            _self.runLogin();
         },
 
         /**
